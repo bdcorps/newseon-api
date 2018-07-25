@@ -5,9 +5,9 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
 app.get('/v1/browse/categories', function(request, response) {
@@ -21,7 +21,7 @@ app.get('/v1/browse/categories/:categoryid', function(request, response) {
 app.get('/v1/browse/categories/:categoryid/playlists', function(request, response) {
     if (request.params.categoryid === "dailyminutes") {
         response.send(JSON.stringify({
-            playlists:[{
+            playlists: [{
                     "id": "dwd123",
                     "title": "Sports in 1 Minute",
                     "media": "http://via.placeholder.com/150x150",
@@ -89,16 +89,44 @@ app.get('/v1/browse/categories/:categoryid/playlists', function(request, respons
                     "media": "http://via.placeholder.com/150x150",
                     "url": "http://www.google.com"
                 }]
-            
+
             }]
 
         }))
     }
-
-    // response.send(JSON.stringify({categories:{items:["sports", "business", "daily minutes"]}}))
 })
 
-
+app.get('/v1/browse/playlists/:playlistid/tracks', function(request, response) {
+    if (request.params.playlistid === "d2d123") {
+        response.send(JSON.stringify({
+            "articles": [{
+                "headline": "sukh",
+                "abstract": "This is an abstract",
+                "publisher": "NY Times",
+                "media": "http://via.placeholder.com/150x150",
+                "url": "http://www.google.com"
+            }]
+        }))
+    } else if (request.params.playlistid === "d2d124") {
+        response.send(JSON.stringify({
+            "articles": [{
+                    "headline": "cool sukh",
+                    "abstract": "This is an abstract",
+                    "publisher": "NY Times",
+                    "media": "http://via.placeholder.com/150x150",
+                    "url": "http://www.google.com"
+                },
+                {
+                    "headline": "min",
+                    "abstract": "This is an abstract",
+                    "publisher": "NY Times",
+                    "media": "http://via.placeholder.com/150x150",
+                    "url": "http://www.google.com"
+                }
+            ]
+        }))
+    }
+})
 
 
 app.listen(app.get('port'), function() {
