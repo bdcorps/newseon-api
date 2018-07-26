@@ -100,6 +100,7 @@ app.get('/v1/browse/playlists/:playlistid/tracks', function(request, response) {
     if (request.params.playlistid === "d2d123") {
         response.send(JSON.stringify({
             "articles": [{
+                "id": "lmao1",
                 "headline": "sukh",
                 "abstract": "This is an abstract",
                 "publisher": "NY Times",
@@ -110,6 +111,7 @@ app.get('/v1/browse/playlists/:playlistid/tracks', function(request, response) {
     } else if (request.params.playlistid === "d2d124") {
         response.send(JSON.stringify({
             "articles": [{
+                    "id": "lmao",
                     "headline": "cool sukh",
                     "abstract": "This is an abstract",
                     "publisher": "NY Times",
@@ -117,6 +119,7 @@ app.get('/v1/browse/playlists/:playlistid/tracks', function(request, response) {
                     "url": "http://www.google.com"
                 },
                 {
+                    "id": "2lmao",
                     "headline": "min",
                     "abstract": "This is an abstract",
                     "publisher": "NY Times",
