@@ -1,2 +1,2 @@
 # newseon-api
-Place API for Newseon Backend. Intended for newseon-react-web.
+Placeholder API for Newseon Backend. Intended for newseon-react-web.
